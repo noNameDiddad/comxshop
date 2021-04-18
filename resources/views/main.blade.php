@@ -59,28 +59,31 @@
 
     <div class="container-fluid text-center" >
         <h1 class="m-3">НОВИНКИ</h1>
-        <div class="row g-4 mb-3">
-            <div style="display: none">
-                {{$i=0}}
-            </div>
+        <div class="comx-row">
             @foreach($product as $item)
-            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-2 text-center">
-                <div class="card h-100">
-                    <div class="catalog_img overflow-hidden">
-                        <a href="{{ route('comx-info', $item->id) }}">
-                            <img src="{{ asset('/storage/'.$item->comx_img_1)}}" class="img-fluid img-thumbnail" alt="">
-                        </a>
+            <div class="comx-item">
+                <div class="comx-item-image" style="background: url('{{ asset('/storage/'.$item->comx_img_1)}}')no-repeat center center; background-size: cover">
+                    <a href="{{ route('comx-info', $item->id) }}">
+                        <div class="comx-item-link"  >
+        
+                        </div>
+                    </a>
+                    <div class="comx-item-name">
+                        <p class="comx-header">{{ $item->header }}</p>
                     </div>
-                    <div class="card-body d-flex flex-column justify-content-end">
-                        <h5 class="card-title">{{ $item->header }}</h5>
-                        <p class="card-text">{{ $item->price_site }}</p>
-                            {{-- @auth --}}
-                            <a class="btn btn-success mb-3" href="{{ route('comx-buy', $item->id) }}">В корзину</a>
-                            {{-- @endauth --}}
+                </div>
+                <div class="comx-item-info">
+                    <div class="comx-item-other">
+                        <div class="comx-item-price">
+                            <p class="">{{ $item->price_site }}</p>
+                        </div>
+                        <div class="comx-item-buy">
+                            <a class="mb-3" href="{{ route('comx-buy', $item->id) }}"><img class="icons" src="{{asset('images/buy_cart.png')}}" alt=""></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            @endforeach
-        </div>    
+            @endforeach   
+        </div>        
     </div>
 @endSection

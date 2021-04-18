@@ -14,6 +14,10 @@
     font-family: 'Oswald', sans-serif;
 }
 
+html{
+    font-size: 16px;
+}
+
 i {
     font-family: fontawesome !important;
     font-style: normal;
@@ -60,7 +64,7 @@ i {
     padding-top: 80vh;
 }
 
-.buttons_nav button{
+.buttons_nav button {
     border-radius: 5px;
     background: #fff;
     padding: 10px;
@@ -89,4 +93,76 @@ i {
 
 .rounded_comx {
     border-radius: 100px;
+}
+
+
+// ===========================ITEMS===================
+
+.comx-row {
+    width: 100%;
+    padding-left: 10.65rem;
+    padding-right: 10.65rem;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-around;
+}
+.comx-item {
+    margin-top: 20px;
+    width: 12.9rem;
+    height: 20.6rem;
+    
+}
+.comx-item p {
+    font-size: 14px;
+}
+.comx-item a {
+    height: 100%;
+    vertical-align: baseline;
+    font-size: 14px;
+}
+.comx-item-link {
+    width: 100%;
+    height: 14.9rem;
+}
+.comx-item-image {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.comx-item-info {
+    width: 100%;
+    height: 2.85rem;
+}
+.comx-item-name {
+    width: 100%;
+    height: 2.85rem;
+    background: #444444;
+    opacity: 90%;
+    color: #fff;
+}
+.comx-item-name {
+    margin: auto;
+}
+.comx-item-other {
+    color: #fff;
+    width: 100%;
+    height: 2.85rem;
+    display: flex;
+    background: #444444;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.comx-item-price {
+    width: 50%;
+    height: 100%;
+}
+.comx-item-price p {
+    height: 100%;
+    line-height: 40px;
+}
+.comx-item-buy {
+    width: 50%;
+    height: 100%;
+    line-height: 40px;
 }
