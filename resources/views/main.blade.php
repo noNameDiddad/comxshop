@@ -3,7 +3,7 @@
 @section('title') Главная страница @endSection
 
 @section('content')
-<header class="main_header p-5 text-center bg-image"  style="background: url('{{asset('images/background_header.png')}}') no-repeat center center; background-size: cover; ">
+<header class="main_header p-5 text-center bg-image"  style="background: url('{{asset('images/background_header.jpg')}}') no-repeat center top; background-size: cover; ">
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark row header_fixed_bar">
     <div class="container-fluid row ">
@@ -57,7 +57,7 @@
 
 @section('table')
 
-    <div class="container-fluid text-center" >
+    <div class="container-fluid text-center" style="background: url('images/catalog_background.png') no-repeat center center; background-size: cover; " >
         <h1 class="m-3">НОВИНКИ</h1>
         <div class="comx-row">
             @foreach($product as $item)
