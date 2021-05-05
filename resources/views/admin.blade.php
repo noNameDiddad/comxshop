@@ -30,7 +30,7 @@
                     <a class="nav-link col-lg-2" href="#"><img class="icons" src="{{asset('images/cart.png')}}" alt=""></a>
                 </li>
                 <li class="nav-item pl-3">
-                    <a class="nav-link disabled col-lg-2" href="#"><img class="icons" src="{{asset('images/facebook.png')}}" alt=""></a>
+                    <a class="nav-link col-lg-2" href="#"><img class="icons" src="{{asset('images/facebook.png')}}" alt=""></a>
                 </li>
                 <li class="nav-item pl-3">
                     <a class="nav-link col-lg-2" href="#"><img class="icons" src="{{asset('images/vk.png')}}" alt=""></a>
