@@ -1,5 +1,4 @@
-@extends('layouts.mn_hdr_ftr')
-
+@extends('layouts.app.blade.php')
 @section('title') Главная страница @endSection
 
 @section('content')
