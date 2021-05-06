@@ -1,4 +1,5 @@
-@extends('layouts.app.blade.php')
+@extends('layouts.app')
+
 @section('title') Главная страница @endSection
 
 @section('content')
