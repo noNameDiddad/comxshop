@@ -2,10 +2,11 @@
 
 @section('title') Главная страница @endSection
 
+@section('nav_header_bar') @include('includes.header') @endSection
+
 @section('content')
 <header class="p-5 text-center bg-image">
 
-@include('includes.header')
 
 
 <div class="container">

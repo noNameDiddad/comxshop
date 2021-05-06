@@ -2,10 +2,10 @@
 
 @section('title') Главная страница @endSection
 
+@section('nav_header_bar') @include('includes.header') @endSection
+
 @section('content')
 <header class="main_header p-5 text-center bg-image"  style="background: url('{{asset('images/background_header.jpg')}}') no-repeat center top; background-size: cover; ">
-
-@include('includes.header')
 
 <div class="w-100 buttons_nav row mb-3 text-center">
     <a href="#" class="col m-3"><button class="w-100">КАТАЛОГ</button></a>

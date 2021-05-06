@@ -2,10 +2,11 @@
 
 @section('title') Главная страница @endSection
 
+@section('nav_header_bar') @include('includes.header') @endSection
+
 @section('content')
 <header class="main_header p-5  mb-10 text-center bg-image"  style="background: url('{{asset('images/background_header.png')}}') no-repeat center center; background-size: cover; ">
 
-@include('includes.header')
     
 <div class="text-center" >
     <div class="row g-0 border rounded overflow-hidden mt-5 mb-4 shadow-sm position-relative bg-light">

@@ -2,10 +2,12 @@
 
 @section('title') Главная страница @endSection
 
+@section('nav_header_bar') @include('includes.header') @endSection
+
 @section('content')
 <header class="p-5  bg-image">
 
-@include('includes.header')
+
 
 <div class="container-fluid p-3">
     <form action="{{ route('admin.photo') }}" method="post" enctype="multipart/form-data" class="add_form">
