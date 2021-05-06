@@ -5,10 +5,6 @@
 @section('nav_header_bar') @include('includes.header') @endSection
 
 @section('content')
-<header class="p-5  bg-image">
-
-
-
 <div class="container-fluid p-3">
     <form action="{{ route('admin.photo') }}" method="post" enctype="multipart/form-data" class="add_form">
         @if ($errors->any())
@@ -46,7 +42,6 @@
         <button type="submit" class="btn btn-warning ">Отправить</button>
     </form>
 </div>
-</header>
 @endSection
 
 @section('table')

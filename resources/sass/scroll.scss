@@ -1,18 +1,26 @@
-body::-webkit-scrollbar {
+header {
+    position: relative;
+}
+.site {
+    overflow-y: overlay;
+    height: 100vh;
+}
+.site::-webkit-scrollbar {
     width: 8px;
-    position: fixed;
     background-color: transparent;
 }
 
-body::-webkit-scrollbar-track {
+.site::-webkit-scrollbar-track {
     background: #00000000;
+    background-color: transparent;
 }
 
-body::-webkit-scrollbar-track:hover {
-    background: #6868689c;
-}
 
-body::-webkit-scrollbar-thumb {
+.site::-webkit-scrollbar-thumb {
     background: rgb(143, 143, 143);
     border-radius: 8px;
+}
+
+.site::-webkit-scrollbar-button{
+    display: none;
 }

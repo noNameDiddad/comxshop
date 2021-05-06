@@ -5,9 +5,6 @@
 @section('nav_header_bar') @include('includes.header') @endSection
 
 @section('content')
-<header class="p-5 text-center bg-image">
-
-
 
 <div class="container">
     <form action="{{ route('admin.photo') }}" method="post" enctype="multipart/form-data" class="add_form">
@@ -20,5 +17,4 @@
 
     </form>
 </div>
-</header>
 @endSection

@@ -4,25 +4,22 @@
 
 @section('nav_header_bar') @include('includes.header') @endSection
 
-@section('content')
-<header class="main_header p-5 text-center bg-image"  style="background: url('{{asset('images/background_header.jpg')}}') no-repeat center top; background-size: cover; ">
-
-<div class="w-100 buttons_nav row mb-3 text-center">
-    <a href="#" class="col m-3"><button class="w-100">КАТАЛОГ</button></a>
-    <a href="#" class="col m-3"><button class="w-100">НОВИНКИ</button></a>
-    <a href="#" class="col m-3"><button class="w-100">БЕСТСЕЛЛЕРЫ</button></a>
-    <a href="#" class="col m-3"><button class="w-100">АКЦИИ</button></a>
-    <a href="#" class="col m-3"><button class="w-100">ПОДАРКИ И УКРАШЕНИЯ</button></a>
-</div>
-
-
-</header>
+@section('header')
+    <header class="main_header p-5 text-center bg-image"  style="background: url('{{asset('images/background_header.jpg')}}') no-repeat center top; background-size: cover; ">
+        <div class="w-100 buttons_nav row mb-3 text-center">
+            <a href="#" class="col m-3"><button class="w-100">КАТАЛОГ</button></a>
+            <a href="#" class="col m-3"><button class="w-100">НОВИНКИ</button></a>
+            <a href="#" class="col m-3"><button class="w-100">БЕСТСЕЛЛЕРЫ</button></a>
+            <a href="#" class="col m-3"><button class="w-100">АКЦИИ</button></a>
+            <a href="#" class="col m-3"><button class="w-100">ПОДАРКИ И УКРАШЕНИЯ</button></a>
+        </div>
+    </header>
 @endSection
 
 @section('table')
 
-    <div class="container-fluid text-center" style="background: url('images/catalog_background.png') no-repeat center center; background-size: cover; " >
-        <h1 class="m-3">НОВИНКИ</h1>
+    <div class="container-fluid text-center"  >
+        <h1 class="p-3">НОВИНКИ</h1>
         <div class="comx-row">
             @foreach($product as $item)
             <div class="comx-item">

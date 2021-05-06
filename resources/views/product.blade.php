@@ -5,9 +5,6 @@
 @section('nav_header_bar') @include('includes.header') @endSection
 
 @section('content')
-<header class="main_header p-5  mb-10 text-center bg-image"  style="background: url('{{asset('images/background_header.png')}}') no-repeat center center; background-size: cover; ">
-
-    
 <div class="text-center" >
     <div class="row g-0 border rounded overflow-hidden mt-5 mb-4 shadow-sm position-relative bg-light">
         <div class="col-5 d-none d-lg-block">
@@ -36,6 +33,4 @@
         </div>
     </div>
 </div>
-    
-</header>
 @endSection
