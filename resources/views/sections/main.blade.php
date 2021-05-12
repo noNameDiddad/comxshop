@@ -24,7 +24,7 @@
             @foreach($product as $item)
             <div class="comx-item">
                 <div class="comx-item-image" style="background: url('{{ asset('/storage/'.$item->comx_img_1)}}')no-repeat center center; background-size: cover">
-                    <a href="{{ route('comx-info', $item->id) }}">
+                    <a href="{{ route('outputItemsInfo', $item->id) }}">
                         <div class="comx-item-link"  >
         
                         </div>

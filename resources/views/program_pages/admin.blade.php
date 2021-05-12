@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="container-fluid p-3">
-    <form action="{{ route('admin.photo') }}" method="post" enctype="multipart/form-data" class="add_form">
+    <form action="{{ route('programItemSave') }}" method="post" enctype="multipart/form-data" class="add_form">
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -83,9 +83,9 @@
                             <td>
                                 <div class="">
                                     @auth
-                                        <a class="btn btn-outline-primary mr-2" href="{{ route('comx-update', $item->id) }}"><i class="fas fa-edit"></i></a>
-                                        <a class="btn btn-outline-danger mr-2" href="{{ route('comx-delete', $item->id) }}"><i class="fas fa-minus-circle"></i></a>
-                                        <a class="btn btn-outline-dark" href="{{ route('comx-info', $item->id) }}"><i class="fas fa-info"></i></a>
+                                        <a class="btn btn-outline-primary mr-2" href="{{ route('scriptItemUpdate', $item->id) }}"><i class="fas fa-edit"></i></a>
+                                        <a class="btn btn-outline-danger mr-2" href="{{ route('scriptItemDelete', $item->id) }}"><i class="fas fa-minus-circle"></i></a>
+                                        <a class="btn btn-outline-dark" href="{{ route('outputItemsInfo', $item->id) }}"><i class="fas fa-info"></i></a>
                                     @endauth
                                 </div>
                             </td>

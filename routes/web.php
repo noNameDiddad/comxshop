@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OutputController;
+use App\Http\Controllers\ScriptController;
+use App\Http\Controllers\ProgramPages;
 use App\Http\Controllers\UserController;
 
 /*
@@ -16,17 +17,24 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-})->name('main');
+Route::get('/',[OutputController::class, 'outputNewItems'])->name('outputNewItems');
 
-Route::get('/',[ProductController::class, 'showProduct'])->name('showProduct');
+Route::get('/info/{id}', [OutputController::class, 'outputItemsInfo'])->name('outputItemsInfo');
 
-Route::get('/info/{id}', [ProductController::class, 'infoProduct'])->name('comx-info');
+Route::post('/admin/save', [ProgramPages::class, 'programItemSave'])->name('programItemSave');
 
-Route::post('/admin/photo', [AdminController::class, 'addPhoto'])->name('admin.photo');
+Route::get('/admin',[OutputController::class, 'outputTable'])->name('outputTable');
 
-Route::get('/admin',[AdminController::class, 'admin'])->name('admin');
+
+
+
+Route::get('/admin/{id}/update',[OutputController::class, 'outputUpdatedItems'])->name('outputUpdatedItems');
+Route::post('/admin/{id}/update', [ScriptController::class, 'scriptItemUpdate'])->name('scriptItemUpdate');
+Route::get('/admin/{id}/delete', [ScriptController::class, 'scriptItemDelete'])->name('scriptItemDelete');
+
+Route::get('/product/buy/{id}', [ScriptController::class, 'buyProduct'])->name('comx-buy');
+
+// Маршруты авторизации
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -45,15 +53,9 @@ Route::get('/register', function () {
 
 Route::post('/register', [UserController::class, 'register']);
 
+
 Route::post('/tokens/create', function (Request $request) {
     $token = $request->user()->createToken($request->token_name);
 
     return ['token' => $token->plainTextToken];
 });
-
-Route::get('/admin/{id}/update',[ProductController::class, 'updateProduct'])->name('comx-update');
-Route::post('/admin/{id}/update', [ProductController::class, 'updateProductSubmit'])->name('comx-update-submit');
-Route::get('/admin/{id}/delete', [ProductController::class, 'deleteProduct'])->name('comx-delete');
-
-Route::get('/product/buy/{id}', [ProductController::class, 'buyProduct'])->name('comx-buy');
-
