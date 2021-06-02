@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OutputController;
 use App\Http\Controllers\ScriptController;
@@ -17,41 +18,24 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/',[OutputController::class, 'outputNewItems'])->name('outputNewItems');
+Route::get('/',[OutputController::class, 'outputMain'])->name('outputMain');
 
-Route::get('/info/{id}', [OutputController::class, 'outputItemsInfo'])->name('outputItemsInfo');
+Route::resource('admin', ProductController::class);
 
-Route::post('/admin/save', [ProgramPages::class, 'programItemSave'])->name('programItemSave');
-
-Route::get('/admin',[OutputController::class, 'outputTable'])->name('outputTable');
-
-
-
-
-Route::get('/admin/{id}/update',[OutputController::class, 'outputUpdatedItems'])->name('outputUpdatedItems');
-Route::post('/admin/{id}/update', [ScriptController::class, 'scriptItemUpdate'])->name('scriptItemUpdate');
-Route::get('/admin/{id}/delete', [ScriptController::class, 'scriptItemDelete'])->name('scriptItemDelete');
 
 Route::get('/product/buy/{id}', [ScriptController::class, 'buyProduct'])->name('comx-buy');
 
 // Маршруты авторизации
+Route::get('/logout', [UserController::class, 'logout'])->name('auth.logout');
 
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+Route::get('/register', [UserController::class, 'create'])->name('auth.create');
 
-Route::get('/logout', function () {
-    Auth::logout();
-    return redirect('/');
-})->name('logout');
+Route::post('/register', [UserController::class, 'register'])->name('auth.register');
 
-Route::post('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'show'])->name('auth.show');
 
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
+Route::post('/login', [UserController::class, 'login'])->name('auth.login');
 
-Route::post('/register', [UserController::class, 'register']);
 
 
 Route::post('/tokens/create', function (Request $request) {

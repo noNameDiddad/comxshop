@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductModelsTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateProductModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_models', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('publisher_manufacturer');
             $table->string('header');
@@ -26,13 +26,13 @@ class CreateProductModelsTable extends Migration
             $table->string('solded');
             $table->string('year');
             $table->string('tags');
-            $table->string('comx_img_1');
-            $table->string('comx_img_2');
-            $table->string('comx_img_3');
-            $table->string('comx_img_4');
-            $table->string('comx_img_5');
+            $table->string('comx_img_1')->default('нет фото');
+            $table->string('comx_img_2')->default('нет фото');
+            $table->string('comx_img_3')->default('нет фото');
+            $table->string('comx_img_4')->default('нет фото');
+            $table->string('comx_img_5')->default('нет фото');
             $table->text('comx_description');
-
+            $table->timestamps();
         });
     }
 
@@ -43,6 +43,6 @@ class CreateProductModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_models');
+        Schema::dropIfExists('products');
     }
 }
