@@ -24,9 +24,6 @@ class AddComxRequest extends FormRequest
     public function rules()
     {
         return [
-            'header' => 'required',
-            'price_site' => 'required',
-            'comx_img_1' => 'required'
         ];
     }
 
@@ -41,7 +38,8 @@ class AddComxRequest extends FormRequest
     public function messages()
     {
         return [
-            'comx_img_1.required' => 'Фото комикса не загружено'
+            'comx_img_1.required' => 'Фото комикса не загружено',
+            'inputEmail.required' => 'Фото комикса не загружено'
         ];
     }
 }
