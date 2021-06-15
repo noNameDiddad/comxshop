@@ -35,6 +35,7 @@ class ProductController extends Controller
      */
     public function store(AddComxRequest $request)
     {
+        // Валидация полученных значений
         $request->validate([
             'publisher_manufacturer' => 'required',
             'header' => 'required',
@@ -53,7 +54,8 @@ class ProductController extends Controller
             'comx_img_5' => 'required',
             'comx_description' => 'max:1800|min:100'
         ]);
-
+            
+        // Функция добавления полученных значений в базу данных
         Product::create([
             'publisher_manufacturer' => $request->publisher_manufacturer,
             'header' => $request->header,
@@ -72,7 +74,7 @@ class ProductController extends Controller
             'comx_img_5' => $request->file('comx_img_5')->store('app/admin', 'public'),
             'comx_description' => $request->comx_description
         ]);
-
+        // Переход на панель администратора
         return redirect()->route('admin.index');
     }
 
@@ -107,6 +109,7 @@ class ProductController extends Controller
      */
     public function update(AddComxRequest $request, Product $admin)
     {
+        // Валидация полученных значений
         $request->validate([
             'publisher_manufacturer' => 'required',
             'header' => 'required',
@@ -125,6 +128,7 @@ class ProductController extends Controller
             'comx_img_5' => '',
             'comx_description' => 'required|max:1800|min:100'
         ]);
+        // Добавление полученных значений в общий массив
         $admin->publisher_manufacturer = $request->publisher_manufacturer;
         $admin->header = $request->header;
         $admin->stock_availability = $request->stock_availability;
@@ -135,27 +139,27 @@ class ProductController extends Controller
         $admin->RRP = $request->RRP;
         $admin->solded = $request->solded;
         $admin->year = $request->year;
+        $admin->comx_description = $request->comx_description;
 
+        // Если заполнен input file, то добавление значений фото 
         if ($request->comx_img_1 ) {
             $admin->comx_img_1 = $request->file('comx_img_1')->store('app/admin', 'public');
         }
         if ($request->comx_img_2 ) {
-            $admin->comx_img_2 = $request->file('comx_img_1')->store('app/admin', 'public');
+            $admin->comx_img_2 = $request->file('comx_img_2')->store('app/admin', 'public');
         }
         if ($request->comx_img_3 ) {
-            $admin->comx_img_3 = $request->file('comx_img_1')->store('app/admin', 'public');
+            $admin->comx_img_3 = $request->file('comx_img_3')->store('app/admin', 'public');
         }
         if ($request->comx_img_4 ) {
-            $admin->comx_img_4 = $request->file('comx_img_1')->store('app/admin', 'public');
+            $admin->comx_img_4 = $request->file('comx_img_4')->store('app/admin', 'public');
         }
         if ($request->comx_img_5 ) {
-            $admin->comx_img_5 = $request->file('comx_img_1')->store('app/admin', 'public');
+            $admin->comx_img_5 = $request->file('comx_img_5')->store('app/admin', 'public');
         }
-
-        $admin->comx_description = $request->comx_description;
-
+        // Обновление значений в БД
         $admin->update();
-
+        // Переход на панель администратора
         return redirect()->route('admin.index');
     }
 

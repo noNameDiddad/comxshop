@@ -4,7 +4,7 @@
 
 @section('header')
     <header class="main_header p-5 text-center bg-image"
-            style="background: url('{{url('/public/images/background_header.jpg')}}') no-repeat center top; background-size: cover; ">
+            style="background: url('{{asset('images/background_header.jpg')}}') no-repeat center top; background-size: cover; ">
         <div class="w-100 buttons_nav row mb-3 text-center">
             <a href="#" class="col m-3">
                 <button class="w-100">КАТАЛОГ</button>
@@ -33,7 +33,7 @@
                 @foreach($product as $item)
                     <div class="comx-item">
                         <div class="comx-item-image"
-                             style="background: url('{{ url('/public/storage/'.$item->comx_img_1)}}')no-repeat center center; background-size: cover">
+                            style="background: url('{{ asset('/storage/'.$item->comx_img_1)}}')no-repeat center center; background-size: cover">
                             <a href="{{ route('admin.show', $item->id) }}">
                                 <div class="comx-item-link">
 
@@ -49,8 +49,10 @@
                                     <p class="">{{ $item->price_site }}</p>
                                 </div>
                                 <div class="comx-item-buy">
-                                    <a class="mb-3" href="{{ route('comx-buy', $item->id) }}">
-                                        <img class="icons" src="{{url('/public/images/buy_cart.png')}}" alt="">
+                                    <a class="mb-3" href="{{ route('cart.show', $item->id) }}">
+                                        @auth
+                                            <img class="icons" src="{{asset('images/buy_cart.png')}}" alt="">
+                                        @endauth
                                     </a>
                                 </div>
                             </div>

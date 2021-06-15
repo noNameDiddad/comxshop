@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ url('/public/css/app.css') }}">
-    <link rel="stylesheet" href="{{ url('/public/css/scroll.css') }}">
-    <link rel="stylesheet" href="{{ url('/public/css/my_styles.css') }}">
+    {{-- Стили и скрипты --}}
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/scroll.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/my_styles.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -17,7 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
-    <script src="{{ url('/public/js/app.js') }}">  </script>
+    <script src="{{ asset('/js/app.js') }}">  </script>
 </head>
 <body>
 <header>
