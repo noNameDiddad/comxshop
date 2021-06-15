@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') Главная страница @endSection
+@section('title') Панель администратора @endSection
 
 @section('content')
     <div class="text-center w-100 mt-2">

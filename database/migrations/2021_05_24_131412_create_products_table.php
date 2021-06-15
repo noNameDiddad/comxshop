@@ -18,11 +18,11 @@ class CreateProductsTable extends Migration
             $table->string('publisher_manufacturer');
             $table->string('header');
             $table->string('stock_availability');
-            $table->string('price_site');
-            $table->string('price_purchase');
+            $table->float('price_site');
+            $table->float('price_purchase');
             $table->string('discount_rate');
             $table->string('ISBN');
-            $table->string('RRP');
+            $table->float('RRP');
             $table->string('solded');
             $table->string('year');
             $table->string('tags');

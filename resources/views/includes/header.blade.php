@@ -1,6 +1,6 @@
 <nav class="navbar text-center navbar-expand-md navbar-dark bg-dark row header_fixed_bar">
     <div class="container-fluid row ">
-        <a class="navbar-brand col-lg-2" href="/"><img src="{{url('/public/images/Logo.png')}}" alt=""></a>
+        <a class="navbar-brand col-lg-2" href="/"><img src="{{asset('images/Logo.png')}}" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,28 +18,28 @@
                         <a class="nav-link col-lg-2" aria-current="page" href="{{ route('auth.logout') }}">Выход</a>
                     @else
                         <a class="nav-link col-lg-2" aria-current="page" href="{{ route('auth.show') }}">
-                            <img class="icons" src="{{url('/public/images/login.png')}}" alt="">
+                            <img class="icons" src="{{asset('images/login.png')}}" alt="">
                         </a>
                     @endif
                 </li>
                 <li class="nav-item pl-3">
-                    <a class="nav-link col-lg-2" href="#">
-                        <img class="icons" src="{{url('/public/images/cart.png')}}" alt="">
+                    <a class="nav-link col-lg-2" href="{{ route('cart.index') }}">
+                        <img class="icons" src="{{asset('images/cart.png')}}" alt="">
                     </a>
                 </li>
                 <li class="nav-item pl-3">
                     <a class="nav-link col-lg-2" href="#">
-                        <img class="icons" src="{{url('/public/images/facebook.png')}}" alt="">
+                        <img class="icons" src="{{asset('images/facebook.png')}}" alt="">
                     </a>
                 </li>
                 <li class="nav-item pl-3">
                     <a class="nav-link col-lg-2" href="#">
-                        <img class="icons" src="{{url('/public/images/vk.png')}}" alt="">
+                        <img class="icons" src="{{asset('images/vk.png')}}" alt="">
                     </a>
                 </li>
                 <li class="nav-item pl-3">
                     <a class="nav-link col-lg-2" href="#">
-                        <img class="icons" src="{{url('/public/images/instagramm.png')}}" alt="">
+                        <img class="icons" src="{{asset('images/instagramm.png')}}" alt="">
                     </a>
                 </li>
             </ul>

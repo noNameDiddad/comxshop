@@ -16,7 +16,7 @@ i {
 }
 
 .main_header {
-    height: 800px;
+    height: 100vh;
 }
 .header_nav_bar > nav {
     margin: 0;
@@ -142,6 +142,7 @@ i {
     height: 100%;
     line-height: 40px;
 }
+/* ===========END_ITEMS=========== */
 
 .background__pattern_image {
     background: url('../images/catalog_background.png') repeat center center;

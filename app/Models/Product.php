@@ -31,4 +31,9 @@ class Product extends Model
         'comx_img_5',
         'comx_description'
     ];
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
+    }
 }
